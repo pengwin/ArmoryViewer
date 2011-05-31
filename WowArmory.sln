@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmoryLib", "ArmoryLib\ArmoryLib.csproj", "{73B6A997-6B3A-4A58-AF73-A9DAA18A7472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowArmory", "WowArmory\WowArmory.csproj", "{D632ED0D-4711-40F7-9CDC-D5F9B5A985D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowMvc", "WowMvc\WowMvc.csproj", "{4C5E9C04-12B0-43F4-BE64-EB8ED9F6352C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73B6A997-6B3A-4A58-AF73-A9DAA18A7472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B6A997-6B3A-4A58-AF73-A9DAA18A7472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B6A997-6B3A-4A58-AF73-A9DAA18A7472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B6A997-6B3A-4A58-AF73-A9DAA18A7472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D632ED0D-4711-40F7-9CDC-D5F9B5A985D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D632ED0D-4711-40F7-9CDC-D5F9B5A985D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D632ED0D-4711-40F7-9CDC-D5F9B5A985D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D632ED0D-4711-40F7-9CDC-D5F9B5A985D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C5E9C04-12B0-43F4-BE64-EB8ED9F6352C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5E9C04-12B0-43F4-BE64-EB8ED9F6352C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5E9C04-12B0-43F4-BE64-EB8ED9F6352C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5E9C04-12B0-43F4-BE64-EB8ED9F6352C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
