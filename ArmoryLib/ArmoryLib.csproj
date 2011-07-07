@@ -30,6 +30,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,12 +52,15 @@
     <Compile Include="Armory.cs" />
     <Compile Include="Deserialization\ArmoryXmlAttributes.cs" />
     <Compile Include="Deserialization\AttributeHelper.cs" />
-    <Compile Include="Guild\Guild.cs" />
+    <Compile Include="Deserialization\XmlPropertyParser.cs" />
+    <Compile Include="Guild.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Deserialization\XmlArmoryDeserializer.cs" />
+    <Compile Include="Deserialization\XmlArmoryParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Guild.xml" />
+    <Content Include="Guild.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

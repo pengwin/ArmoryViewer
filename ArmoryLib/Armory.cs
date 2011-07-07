@@ -11,33 +11,31 @@ using System.Xml.Serialization;
 
 namespace ArmoryLib
 {
-
-
+   
+    /// <summary>
+    /// Get XmlResponse from WowArmory
+    /// </summary>
     public class Armory
     {
-        public string DefaultUserAgent
+        // Contains indexes of strings in _regions array
+        public enum ArmoryRegions : int
         {
-            get
-            {
-                return "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.5.20404)";
-            }
+            Europe = 0,
         }
 
-        void Decode(string file, string outFile)
-        {
-            using (StreamReader reader = new StreamReader(File.OpenRead(file), Encoding.UTF8))
-            {
-                using (StreamWriter writer = new StreamWriter(File.OpenWrite(outFile), Encoding.GetEncoding(1251)))
-                    writer.Write(reader.ReadToEnd());
-            }
-        }
+        private string[] _regions = new string[] { "http://eu.wowarmory.com/" };
 
-        public XmlDocument Request(string armoryRequest)
+        private string DefaultUserAgent=  "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.5.20404)";
+
+        private XmlDocument Request(ArmoryRegions region, string searchString)
         {
             XmlDocument armoryResponse = new XmlDocument();
 
             using (WebClient client = new WebClient())
             {
+                string Url = _regions[ (int) region];
+                string armoryRequest = Url + searchString;
+
                 client.Headers.Set("User-Agent", DefaultUserAgent);
                 client.Encoding = System.Text.Encoding.UTF8;
                 armoryResponse.LoadXml(client.DownloadString(armoryRequest));
@@ -46,26 +44,20 @@ namespace ArmoryLib
             return armoryResponse;
         }
 
-
-
-        public XmlDocument RequestCharacter(string realmName, string characterName)
-        {
-            string Url = "http://eu.wowarmory.com/";
+        public XmlDocument RequestCharacter(ArmoryRegions region, string characterName, string realmName)
+        {     
             string searchString = string.Format("character-sheet.xml?r={0}&n={1}",
                                                  HttpUtility.UrlEncode(realmName),
                                                  HttpUtility.UrlEncode(characterName));
-            string armoryRequest = Url + searchString;
-            return Request(armoryRequest);
+            return Request(region, searchString);
         }
 
-        public XmlDocument RequestGuild(string realmName, string guildName)
+        public XmlDocument RequestGuild(ArmoryRegions region, string realmName, string guildName)
         {
-            string Url = "http://eu.wowarmory.com/";
             string searchString = string.Format("guild-info.xml?r={0}&n={1}",
                                                  HttpUtility.UrlEncode(realmName),
                                                  HttpUtility.UrlEncode(guildName));
-            string armoryRequest = Url + searchString;
-            return Request(armoryRequest);
+            return Request(region, searchString);
         }
     }
 }

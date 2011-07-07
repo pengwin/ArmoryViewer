@@ -47,6 +47,8 @@ namespace ArmoryLib.Deserialization.XmlAttributes
     public class XmlArmoryAttributeAttribute : Attribute
     {
         public string Name { get; set; }
+        public string XPath { get; set; }
+
 
         public XmlArmoryAttributeAttribute(string Name)
         {

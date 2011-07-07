@@ -1,5 +1,0 @@
-F:\Coding\dotNet\WowArmory\ArmoryLib\bin\Release\ArmoryLib.dll
-F:\Coding\dotNet\WowArmory\ArmoryLib\bin\Release\ArmoryLib.pdb
-F:\Coding\dotNet\WowArmory\ArmoryLib\obj\Release\ResolveAssemblyReference.cache
-F:\Coding\dotNet\WowArmory\ArmoryLib\obj\Release\ArmoryLib.dll
-F:\Coding\dotNet\WowArmory\ArmoryLib\obj\Release\ArmoryLib.pdb
